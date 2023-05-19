@@ -1,17 +1,17 @@
 import React from 'react';
-
+import { StatisticsSection, StatisticsTitle, StatisticsList, StatisticsItem } from './Statistics.styled';
 class Statistics extends React.Component{
 
 render(){
 
-    return(<section> 
-    <h2>Statistics</h2>
-    <ul>
-        <li>Good: </li>
-        <li>Neutral: </li>
-        <li>Bad: </li>
-    </ul>
-    </section> 
+    return(<StatisticsSection> 
+    <StatisticsTitle>Statistics</StatisticsTitle>
+    <StatisticsList>
+        <StatisticsItem>Good: </StatisticsItem>
+        <StatisticsItem>Neutral: </StatisticsItem>
+        <StatisticsItem>Bad: </StatisticsItem>
+    </StatisticsList>
+    </StatisticsSection> 
 
     )
 }
