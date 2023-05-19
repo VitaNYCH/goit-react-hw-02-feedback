@@ -1,21 +1,16 @@
-import React from 'react';
-import { StatisticsSection, StatisticsTitle, StatisticsList, StatisticsItem } from './Statistics.styled';
-class Statistics extends React.Component{
+import React from "react";
+import {StatisticsSection, StatisticsTitle, StatisticsList, StatisticsItem, StatisticsValue } from './Statistics.styled';
 
-render(){
-
-    return(<StatisticsSection> 
+export const Statistics = ({onGoodRate, onNeutralRate, onBadRate}) => {
+<StatisticsSection> 
     <StatisticsTitle>Statistics</StatisticsTitle>
     <StatisticsList>
-        <StatisticsItem>Good: </StatisticsItem>
-        <StatisticsItem>Neutral: </StatisticsItem>
-        <StatisticsItem>Bad: </StatisticsItem>
+        <StatisticsItem>Good:<StatisticsValue>{onGoodRate}</StatisticsValue> </StatisticsItem>
+        <StatisticsItem>Neutral:<StatisticsValue>{onNeutralRate}</StatisticsValue></StatisticsItem>
+        <StatisticsItem>Bad:<StatisticsValue>{onBadRate}</StatisticsValue></StatisticsItem>
+        <StatisticsItem>Total:<StatisticsValue></StatisticsValue></StatisticsItem>
+        <StatisticsItem>Positive feedback:<StatisticsValue>%</StatisticsValue></StatisticsItem>
     </StatisticsList>
-    </StatisticsSection> 
-
-    )
-}
+    </StatisticsSection>
 
 }
-
-export default Statistics;

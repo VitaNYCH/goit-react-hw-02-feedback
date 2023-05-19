@@ -13,15 +13,20 @@ margin:0 120px;
 
 export const StatisticsList = styled.ul`
 list-style: none;
-
-margin: 0 auto;
+width: 120px;
+margin: 0;
 padding: 0;
 `;
 
 export const StatisticsItem = styled.li`
 display:flex;
-flex-direction: column;
+flex-direction: row;
+justify-content: space-between;
 margin-top: 16px;
+`;
 
+export const StatisticsValue = styled.span`
+font-weight: 500;
+font-size: 18px;
 
 `;
