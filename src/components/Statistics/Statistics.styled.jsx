@@ -14,7 +14,7 @@ export const StatisticsSection = styled.section`
  
  export const StatisticsList = styled.ul`
  list-style: none;
- width: 120px;
+ width: 130px;
  margin: 0;
  padding: 0;
  `;

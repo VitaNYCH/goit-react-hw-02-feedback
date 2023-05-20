@@ -29,15 +29,29 @@ handelBadRate = () => {
    
 };
 
-countTotalFeedback=() => {
+countTotalFeedback =(state)=>{
+    const{ good, neutral, bad} = state;
     let total = 0;
-   this.setState(prevState =>(
-    {
+    total = good + neutral + bad
 
-   }));
+    return total;
+};
 
+
+countPositiveFeedbackPercentage = (state)=>{
+    const{ good, neutral, bad} = state;
+    let percentage = 0;
+    let negative = neutral + bad
+    if(negative > 0){
+    percentage = Math.round((good/(good + neutral + bad))*100)
+    return percentage;
+    }
+    return percentage = 100;
+
+
+ 
+   
 }
-
 
 render(){
     return(
@@ -62,7 +76,8 @@ render(){
    onGoodRate ={this.state.good} 
    onNeutralRate ={this.state.neutral} 
    onBadRate = {this.state.bad}
-   onTotalRate = {this.total}
+   onTotalRate = {this.countTotalFeedback(this.state)}
+   onPositiveFeedback ={this.countPositiveFeedbackPercentage(this.state)}
    />
     </>);
     };  
