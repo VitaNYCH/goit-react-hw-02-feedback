@@ -1,9 +1,6 @@
 import React from 'react';
-import { Statistics } from 'components/Statistics';
 import {FeedbackTitle, Button} from "./FeedbackForm.styled";
-
-
-
+import { Statistics } from './Statistics';
 export class FeedbackForm extends React.Component{
 
 state = {
@@ -32,9 +29,10 @@ handelBadRate = () => {
    
 };
 
-countTotalFeedback=()=>{
-
-};
+countTotalFeedback=() => {
+    
+   
+}
 
 
 render(){
@@ -44,9 +42,10 @@ render(){
    <Button type = "button" onClick = {this.handleGoodRate}>Good</Button>
     <Button type = "button" onClick = {this.handelNeutralRate}>Neutral</Button>
     <Button type = "button" onClick = {this.handelBadRate}>Bad</Button>
-
-   <Statistics onGoodRate={this.state.good} onNeutralRate={this.state.neutral} onBadRate={this.state.bad}/>
+   <Statistics  onGoodRate ={this.state.good} onNeutralrate ={this.state.neutral} onBadRate ={this.state.bad}/>
+    </>);
+    };  
    
-    </>)
-    }
 }
+
+
