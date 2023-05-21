@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { Button } from './FeedbackOptions.styled';
 
-export const FeedbackOptions =({onGoodRate, onNeutralRate, onBadRate})=>{
+export const FeedbackOptions =({onGoodRate, onNeutralRate,onBadRate})=>{
 return (<>
-<Button 
+   <Button 
 type = "button" 
 onClick = {onGoodRate}>
  Good
@@ -17,6 +18,6 @@ onClick = {onGoodRate}>
  type = "button" 
  onClick = {onBadRate}>
  Bad
- </Button>
+ </Button> 
  </>);
 }

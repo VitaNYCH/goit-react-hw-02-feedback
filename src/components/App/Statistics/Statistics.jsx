@@ -1,8 +1,8 @@
-import React from 'react';
-import {StatisticsSection, StatisticsTitle, StatisticsList, StatisticsItem, StatisticsValue} from './Statistics.styled'
+import React from "react";
+import PropTypes from 'prop-types';
+import {StatisticsSection, StatisticsList, StatisticsItem, StatisticsValue} from './Statistics.styled'
 export const Statistics =({good, neutral, bad, total, positivePercentage })=>{
 return <StatisticsSection> 
-    <StatisticsTitle>Statistics</StatisticsTitle>
     <StatisticsList>
         <StatisticsItem>Good:<StatisticsValue>{good}</StatisticsValue> </StatisticsItem>
         <StatisticsItem>Neutral:<StatisticsValue>{neutral}</StatisticsValue></StatisticsItem>
@@ -11,4 +11,12 @@ return <StatisticsSection>
         <StatisticsItem>Positive feedback:<StatisticsValue>{positivePercentage}%</StatisticsValue></StatisticsItem>
     </StatisticsList>
 </StatisticsSection> 
+}
+
+Statistics.propTypes = {
+    good: PropTypes.number, 
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+    total: PropTypes.number,
+    positivePercentage: PropTypes.number,
 }
