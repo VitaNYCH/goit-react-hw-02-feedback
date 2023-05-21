@@ -8,13 +8,13 @@ export const StatisticsSection = styled.section`
  `;
  
  export const StatisticsTitle = styled.h2`
- margin:0 120px;
+ margin: 0;
  `;
  
  export const StatisticsList = styled.ul`
  list-style: none;
  width: 130px;
- margin: 0;
+ margin: 0 auto;
  padding: 0;
  `;
  

@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import { Container } from "./App.styled";
 import {Section} from './Section';
 import {FeedbackOptions} from './FeedbackOptions';
-import { Statistics } from "./Statistics/Statistics";
+import { Statistics } from "./Statistics";
+import { Notification } from "./Notification";
 
 
 export class App extends Component {
@@ -11,35 +12,18 @@ state = {
     neutral: 0,
     bad: 0,
 }
-// handleGoodRate = evt => {
-//    console.log(evt);
-//   this.setState(
-//    {[evt]: this.state[evt] +1,
-//    });
-// };
-handelGoodRate = () => {
- this.setState(prevState =>(
-   {good: prevState.good +1,})
-  )
-};
 
-handelNeutralRate = () => {
-   this.setState(prevState =>(   
-   {neutral: prevState.neutral +1,
-   }));
-};
 
-handelBadRate = () => {
-   this.setState(prevState => (
-    {bad: prevState.bad +1,
-   }));
-
+feedbackState = (e) =>{
+   console.log(this.state)
+   this.setState({[e]: this.state[e] + 1,})
 }
 
 countTotalFeedback =(state)=>{
    const{ good, neutral, bad} = state;
    let total = 0;
    total = good + neutral + bad
+   console.log(total);
 
    return total;
 };
@@ -57,25 +41,31 @@ countPositiveFeedbackPercentage = (state)=>{
 
 
 render(){ 
+const {good, neutral, bad} = this.state;
+const options = Object.keys(this.state);
 
 return (<Container> 
 <Section title ='Please leave Feedback'>
-<FeedbackOptions onGoodRate={this.handelGoodRate} 
-onNeutralRate={this.handelNeutralRate}
-onBadRate={this.handelBadRate}
+<FeedbackOptions 
+options = {options}
+onLeaveFeedback = {this.feedbackState}
 />
+ 
 </Section>
 <Section title = 'Statistics'>
+{ this.countTotalFeedback(this.state) > 0 ?
 <Statistics 
-good ={this.state.good} 
-neutral ={this.state.neutral} 
-bad = {this.state.bad}
+good ={good} 
+neutral ={neutral} 
+bad = {bad}
 total = {this.countTotalFeedback(this.state)}
 positivePercentage ={this.countPositiveFeedbackPercentage(this.state)}
-/>
+/> : <Notification text ='There is no feedback'/>}
 </Section>
+
 
 </Container>)
    
 };
 }
+

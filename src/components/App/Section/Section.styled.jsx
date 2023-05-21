@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const FeedbackTitle = styled.h2`
+display:flex;
+justify-content: center; 
+
 font-size: 24px;
 text-transform: uppercase;
 
