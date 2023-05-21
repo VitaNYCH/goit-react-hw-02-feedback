@@ -15,7 +15,6 @@ state = {
 
 
 feedbackState = (e) =>{
-   console.log(this.state)
    this.setState({[e]: this.state[e] + 1,})
 }
 
@@ -23,7 +22,6 @@ countTotalFeedback =(state)=>{
    const{ good, neutral, bad} = state;
    let total = 0;
    total = good + neutral + bad
-   console.log(total);
 
    return total;
 };
