@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { NotificationSection } from "./Notification.styled";
 
 export const Notification =({text})=> {
@@ -7,4 +8,8 @@ return(
  {text}   
 </NotificationSection>
 )
+}
+
+Notification.propTypes = {
+text: PropTypes.string.isRequired,
 }
