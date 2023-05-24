@@ -1,15 +1,11 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { NotificationSection } from "./Notification.styled";
+import { NotificationSection } from './Notification.styled';
 
-export const Notification =({text})=> {
-return(
-<NotificationSection>
- {text}   
-</NotificationSection>
-)
-}
+export const Notification = ({ text }) => {
+  return <NotificationSection>{text}</NotificationSection>;
+};
 
 Notification.propTypes = {
-text: PropTypes.string.isRequired,
-}
+  text: PropTypes.string.isRequired,
+};
