@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Notification } from '../Notification';
 import {
   StatisticsSection,
   StatisticsList,
@@ -13,28 +14,31 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => {
-  return (
-    <StatisticsSection>
-      <StatisticsList>
-        <StatisticsItem>
-          Good:<StatisticsValue>{good}</StatisticsValue>{' '}
-        </StatisticsItem>
-        <StatisticsItem>
-          Neutral:<StatisticsValue>{neutral}</StatisticsValue>
-        </StatisticsItem>
-        <StatisticsItem>
-          Bad:<StatisticsValue>{bad}</StatisticsValue>
-        </StatisticsItem>
-        <StatisticsItem>
-          Total:<StatisticsValue>{total}</StatisticsValue>
-        </StatisticsItem>
-        <StatisticsItem>
-          Positive feedback:
-          <StatisticsValue>{positivePercentage}%</StatisticsValue>
-        </StatisticsItem>
-      </StatisticsList>
-    </StatisticsSection>
-  );
+  if (total > 0) {
+    return (
+      <StatisticsSection>
+        <StatisticsList>
+          <StatisticsItem>
+            Good:<StatisticsValue>{good}</StatisticsValue>{' '}
+          </StatisticsItem>
+          <StatisticsItem>
+            Neutral:<StatisticsValue>{neutral}</StatisticsValue>
+          </StatisticsItem>
+          <StatisticsItem>
+            Bad:<StatisticsValue>{bad}</StatisticsValue>
+          </StatisticsItem>
+          <StatisticsItem>
+            Total:<StatisticsValue>{total}</StatisticsValue>
+          </StatisticsItem>
+          <StatisticsItem>
+            Positive feedback:
+            <StatisticsValue>{positivePercentage}%</StatisticsValue>
+          </StatisticsItem>
+        </StatisticsList>
+      </StatisticsSection>
+    );
+  }
+  return <Notification text="There is no feedback" />;
 };
 
 Statistics.propTypes = {
